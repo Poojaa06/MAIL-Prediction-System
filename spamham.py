@@ -75,13 +75,6 @@ with st.expander(" Data Insights"):
     ax1.set_title("Spam vs Ham Distribution")
     st.pyplot(fig1)
 
-    st.markdown("#### Message Length Distribution")
-    mail_data['Message_Length'] = mail_data['Message'].apply(len)
-    fig2, ax2 = plt.subplots()
-    sns.histplot(data=mail_data, x='Message_Length', hue='Category', bins=50, ax=ax2, palette={0: 'green', 1: 'red'})
-    ax2.set_title("Message Length by Category")
-    st.pyplot(fig2)
-
 # Confusion Matrix
 with st.expander(" Confusion Matrix"):
     y_pred = model.predict(x_test_vec)
