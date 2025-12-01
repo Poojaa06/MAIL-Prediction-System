@@ -20,7 +20,8 @@ st.sidebar.info(
 # Load and preprocess data
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r"C:\Users\DELL 3520\OneDrive\Desktop\streamlit\dataset\mail_data.csv", encoding='latin1')
+    return pd.read_csv("dataset/mail_data.csv", encoding="latin1")
+
     data['Category'] = data['Category'].map({'ham': 0, 'spam': 1}).astype(int)
     return data
 
